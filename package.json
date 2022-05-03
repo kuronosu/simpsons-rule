@@ -1,0 +1,65 @@
+{
+  "name": "simpsons-rule",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "electron-esbuild dev",
+    "build": "electron-esbuild build",
+    "package": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^15.0.0",
+    "electron-builder": "^22.11.7",
+    "electron-esbuild": "3.x",
+    "electron-util": "^0.17.2",
+    "esbuild": "0.x",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "build": {
+    "appId": "io.comp.myapp",
+    "productName": "simpsons-rule",
+    "extraMetadata": {
+      "name": "simpsons-rule",
+      "main": "main.js"
+    },
+    "files": [
+      {
+        "from": ".",
+        "filter": [
+          "package.json"
+        ]
+      },
+      {
+        "from": "dist/main"
+      },
+      {
+        "from": "dist/renderer"
+      }
+    ],
+    "win": {
+      "target": [
+        "zip"
+      ]
+    },
+    "mac": {
+      "target": [
+        "zip"
+      ]
+    },
+    "linux": {
+      "target": [
+        "zip"
+      ]
+    },
+    "directories": {
+      "buildResources": "resources"
+    },
+    "publish": null
+  },
+  "dependencies": {
+    "mathjax-react": "^1.0.6",
+    "mathjs": "^10.0.0",
+    "plotly.js": "^2.6.2",
+    "react-plotly.js": "^2.5.1"
+  }
+}
